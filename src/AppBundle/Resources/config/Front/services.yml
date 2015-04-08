@@ -1,0 +1,4 @@
+services:
+#    my_awesome_project.example:
+#        class: AppBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

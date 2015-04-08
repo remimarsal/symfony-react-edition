@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/app.css">
+{% endblock %}
+
+{% block header %}
+    {% include 'Front/Partials/header.html.twig' %}
+{% endblock %}
+
+{% block main %}
+    <main id="page" class="container">
+        {% include 'Front/Partials/preloader.html.twig' %}
+    </main>
+{% endblock %}
+
+{% block footer %}
+    {% include 'Front/Partials/footer.html.twig' %}
+{% endblock %}
+
+{% block javascript %}
+    {{ parent() }}
+
+    <script type="text/javascript" src="/bundles/fosjsrouting/js/router.js"></script>
+    <script type="text/javascript" src="/js/fos_js_routes.js"></script>
+
+    <script type="text/javascript" src="/js/vendor/materialize.js"></script>
+    <script type="text/javascript" src="/js/app.js"></script>
+{% endblock %}

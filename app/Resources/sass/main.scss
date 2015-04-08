@@ -1,0 +1,70 @@
+@charset "UTF-8";
+
+/** Materialize BEGIN **/
+
+// Mixins
+@import "../../../bower_modules/materialize/sass/components/prefixer";
+@import "../../../bower_modules/materialize/sass/components/mixins";
+@import "../../../bower_modules/materialize/sass/components/color";
+
+/*** Fonts ***/
+$roboto-font-path: "/font/roboto/" !default;
+$icons-font-path: "/font/material/" !default;
+
+// Variables;
+@import "../../../bower_modules/materialize/sass/components/variables";
+
+
+// Reset
+@import "../../../bower_modules/materialize/sass/components/normalize";
+
+// components
+@import "../../../bower_modules/materialize/sass/components/global";
+@import "../../../bower_modules/materialize/sass/components/icons-material-design";
+@import "../../../bower_modules/materialize/sass/components/grid";
+@import "../../../bower_modules/materialize/sass/components/navbar";
+@import "../../../bower_modules/materialize/sass/components/roboto";
+@import "../../../bower_modules/materialize/sass/components/typography";
+@import "../../../bower_modules/materialize/sass/components/cards";
+@import "../../../bower_modules/materialize/sass/components/toast";
+@import "../../../bower_modules/materialize/sass/components/tabs";
+@import "../../../bower_modules/materialize/sass/components/tooltip";
+@import "../../../bower_modules/materialize/sass/components/buttons";
+@import "../../../bower_modules/materialize/sass/components/dropdown";
+@import "../../../bower_modules/materialize/sass/components/waves";
+@import "../../../bower_modules/materialize/sass/components/modal";
+@import "../../../bower_modules/materialize/sass/components/collapsible";
+@import "../../../bower_modules/materialize/sass/components/materialbox";
+@import "../../../bower_modules/materialize/sass/components/form";
+@import "../../../bower_modules/materialize/sass/components/table_of_contents";
+@import "../../../bower_modules/materialize/sass/components/sideNav";
+@import "../../../bower_modules/materialize/sass/components/preloader";
+@import "../../../bower_modules/materialize/sass/components/slider";
+@import "../../../bower_modules/materialize/sass/components/date_picker/default.scss";
+@import "../../../bower_modules/materialize/sass/components/date_picker/default.date.scss";
+@import "../../../bower_modules/materialize/sass/components/date_picker/default.time.scss";
+
+/** Materialize END **/
+
+/** App BEGIN **/
+
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+header, footer {
+	z-index: 1;
+}
+
+.side-nav {
+	z-index: 0;
+	padding-top: 75px !important;
+}
+
+/** App END */

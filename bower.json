@@ -1,0 +1,6 @@
+{
+    "name": "my-awesome-project",
+    "dependencies": {
+    	"materialize": "~0.96.*"
+    }
+}
