@@ -1,3 +1,7 @@
 front_home:
     resource: "@AppBundle/Controller/Front/HomeController.php"
     type:     annotation
+
+front_post:
+    resource: "@AppBundle/Controller/Front/PostController.php"
+    type:     annotation

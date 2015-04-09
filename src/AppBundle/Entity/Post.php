@@ -4,11 +4,11 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
+use JMS\Serializer\Annotation\Type;
+
 /**
- * Post
- *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Entity\PostRepository")
+ * @ORM\Entity
+ * @ORM\Table(name="posts")
  */
 class Post
 {
@@ -23,6 +23,7 @@ class Post
 
     /**
      * @var string
+     * @Type("string")
      *
      * @ORM\Column(name="content", type="text")
      */

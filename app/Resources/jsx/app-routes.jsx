@@ -6,13 +6,13 @@ var Route = ReactRouter.Route,
 
 	App = require('./layout.jsx'),
 	Home = require('./pages/home.jsx'),
-	Post = require('./pages/post.jsx'),
+	Posts = require('./pages/posts.jsx'),
 	About = require('./pages/about.jsx');
 
 var AppRoutes = (
 	<Route name="/" handler={App}>
 		<DefaultRoute name="home" handler={Home} />
-		<Route name="post" handler={Post} />
+		<Route name="posts" handler={Posts} />
 		<Route name="about" handler={About} />
 	</Route>
 );  

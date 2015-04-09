@@ -57,9 +57,6 @@ module.exports = function (grunt) {
 			options: {
 				stderr: false
 			},
-			fos_js_routing: {
-				command: 'php app/console fos:js-routing:dump'
-			},
 			sass: {
 				command: 'sass app/Resources/sass/main.scss web/css/app.css --cache-location=app/Resources/sass/.sass-cache'
 			},
@@ -82,7 +79,7 @@ module.exports = function (grunt) {
 			},
 			templates: {
 				files: ['app/Resources/views/**/**/*'],
-				tasks: ['shell:fos_js_routing']
+				tasks: ['']
 			},
 			fonts: {
 				files: ['app/Resources/fonts/*'],
@@ -98,5 +95,5 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
-	grunt.registerTask('default', ['bowercopy', 'copy', 'shell:sass', 'shell:fos_js_routing', 'shell:browserify', 'watch']);
+	grunt.registerTask('default', ['bowercopy', 'copy', 'shell:sass', 'shell:browserify', 'watch']);
 };

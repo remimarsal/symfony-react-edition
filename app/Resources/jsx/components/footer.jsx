@@ -21,7 +21,7 @@ var Footer = React.createClass({displayName: "Footer",
 									<Link to="home">Home</Link>
 								</li>
 								<li>
-									<Link to="post">Posts</Link>
+									<Link to="posts">Posts</Link>
 								</li>
 								<li>
 									<Link to="about">About</Link>

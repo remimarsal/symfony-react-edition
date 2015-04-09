@@ -1,7 +1,6 @@
 'use strict';
 
-var Link = ReactRouter.Link,
-	Breadcrumb = require('./breadcrumb.jsx');
+var Link = ReactRouter.Link;
 
 var Header = React.createClass({
 
@@ -18,12 +17,12 @@ var Header = React.createClass({
 						<a href="#" data-activates="slide-out" className="button-collapse"><i className="mdi-navigation-menu"></i></a>
 						<Link to="home" className="brand-logo">Logo</Link>
 
-						<ul className="right">
+						<ul className="right hide-on-med-and-down">
 							<li>
 								<Link to="home">Home</Link>
 							</li>
 							<li>
-								<Link to="post">Posts</Link>
+								<Link to="posts">Posts</Link>
 							</li>
 							<li>
 								<Link to="about">About</Link>
