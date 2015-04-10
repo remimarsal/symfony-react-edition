@@ -11,25 +11,43 @@ var PostListActionStore = Reflux.createStore({
 		this.postList = {
 			url: '/post/',
 			posts: [],
-			newPost: ''
+			postInput: '',
+			editMode: false,
+			editPostKey: null,
+			label: '',
+			labelNewPost: 'Add a new post',
+			labelEditPost: 'Edit post'
 		};
+		this.postList.label = this.postList.labelNewPost;
 	},
 
 	onInputChange: function(content) {
-		this.postList.newPost = content;
+		this.postList.postInput = content;
 		this.trigger(this.postList);
 	},
 
 	onSendPost: function() {
-		if (this.postList.newPost.length < 1) {
+		if (this.postList.postInput.length < 1) {
 			return;
 		}
 
-		request.post(this.postList.url).send(this.postList.newPost).end(function(err, res) {
-			PostListActions.getPosts();
-		});
+		var _this = this;
 
-		this.postList.newPost = '';
+		if (this.postList.editMode) {
+			request.put(this.postList.url+this.postList.editPostKey).send(this.postList.postInput).end(function(err, res) {
+				_this.postList.editMode = false;
+				_this.postList.editPostKey = null;
+				_this.postList.label = _this.postList.labelNewPost;
+				PostListActions.getPosts();
+			});
+		}
+		else {
+			request.post(this.postList.url).send(this.postList.postInput).end(function(err, res) {
+				PostListActions.getPosts();
+			});
+		}
+
+		this.postList.postInput = '';
 		this.trigger(this.postList);
 	},
 
@@ -47,10 +65,27 @@ var PostListActionStore = Reflux.createStore({
 	},
 
 	onDeletePost: function(key) {
-		console.log(this.postList.posts);
 		request.del(this.postList.url+key).end(function(err, res) {
 			PostListActions.getPosts();
 		});
+	},
+
+	onUpdatePost: function(content, key) {
+		if (this.postList.editPostKey === key) {
+			this.postList.editMode = false;
+			this.postList.editPostKey = null;
+			this.postList.postInput = '';
+			this.postList.label = this.postList.labelNewPost;
+		}
+		else {
+			this.postList.editMode = true;
+			this.postList.editPostKey = key;
+			this.postList.postInput = content;
+			this.postList.label = this.postList.labelEditPost;
+			document.getElementById('post-content').focus();
+		}
+
+		this.trigger(this.postList);
 	},
 
 	getInitialState: function() {

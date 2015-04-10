@@ -18,7 +18,7 @@ var PostList = React.createClass({displayName: "PostList",
 
 		_.each(this.state.posts, function(post) {
 			posts.push(
-				<Post key={post.id} id={post.id} content={post.content} />
+				<Post key={posts.length} id={post.id} count={posts.length + 1} content={post.content} />
 			);
 		});
 

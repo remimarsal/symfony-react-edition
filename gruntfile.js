@@ -1,6 +1,10 @@
 module.exports = function (grunt) {
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
+
+		/** Clean Assets Task **/
+		clean: ['web/css/*', 'web/font/*', 'web/js/*'],
+
 		/** Copy Assets Task **/
 		copy: {
 			javascript: {
@@ -32,23 +36,6 @@ module.exports = function (grunt) {
 			javascript: {
 				files: {
 					'js/vendor/' : 'materialize/dist/js/materialize.js'
-				}
-			}
-		},
-		/** Browserify Task **/
-		browserify: {
-			options: {
-				debug: true,
-				external: [
-					'jquery',
-					'react',
-					'react-router',
-					'underscore'
-				]
-			},
-			dist: {
-				files: {
-					'web/js/app.js' : ['app/Resources/jsx/app.jsx']
 				}
 			}
 		},
@@ -90,10 +77,10 @@ module.exports = function (grunt) {
 	
 	grunt.loadNpmTasks('grunt-shell');
 	grunt.loadNpmTasks('grunt-bowercopy');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-copy');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-browserify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 
 	grunt.registerTask('default', ['bowercopy', 'copy', 'shell:sass', 'shell:browserify', 'watch']);
 };

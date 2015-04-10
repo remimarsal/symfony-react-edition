@@ -67,26 +67,4 @@ header, footer {
 	padding-top: 75px !important;
 }
 
-/** Toasts override */
-#toast-container {
-	display:block;
-	position: fixed;
-	z-index: 1001;
-
-	@media #{$small-and-down} {
-		min-width: 100%;
-		bottom: 0%;
-	}
-	@media #{$medium-only} {
-		min-width: 30%;
-		left: 75%;
-		top: 10%;
-	}
-	@media #{$large-and-up} {
-		min-width: 8%;
-		top: 10%;
-		right: 7%;
-	}
-}
-
 /** App END */
