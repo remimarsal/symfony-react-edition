@@ -8,8 +8,11 @@ var PostListActionStore = Reflux.createStore({
 	listenables: [PostListActions],
 
 	init: function() {
+		var url = window.location.href;
+
+		url = url.substring(0, url.indexOf('#'))+'post/';
 		this.postList = {
-			url: '/post/',
+			url: url,
 			posts: [],
 			postInput: '',
 			editMode: false,

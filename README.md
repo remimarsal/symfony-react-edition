@@ -20,7 +20,7 @@ The sample application uses Sass and Bower but these are not required. I also sl
 - composer_modules
 - node_modules
 
-A Gruntfile has also been setup which made Assetic superfluous. Grunt will first copy assets in the web directory then watch for changes in twig, sass, jsx files, rebuild if necessary, and automatically reload the page which I find pretty awesome. The Gruntfile would have to be customized to fit the specific needs of your application.
+A Gruntfile has also been setup which made Assetic superfluous. Grunt will first copy assets in the web directory then watch for changes in Twig, Sass, JSX files, rebuild if necessary, and automatically reload the page which I find pretty awesome. The Gruntfile would have to be customized to fit the specific needs of your application.
 
 ### Requirements
 
@@ -46,4 +46,5 @@ gem install sass
 
 ### Usage (Assetic replacement + Livereload)
 
-    grunt
+- `grunt`
+- Open a new tab with your virtual host (for example: dev.symfony-react.com/app_dev.php/)

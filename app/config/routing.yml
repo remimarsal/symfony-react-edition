@@ -1,8 +1,2 @@
-app:
-    resource: "@AppBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
-front:
+AppBundle:
     resource: "@AppBundle/Resources/config/routing.yml"
-    prefix:   /

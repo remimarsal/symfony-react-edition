@@ -1,2 +1,2 @@
-imports:
-    - { resource: Front/routing.yml }
+Front:
+    resource: "@AppBundle/Resources/config/Front/routing.yml"
