@@ -20,18 +20,20 @@ The sample application uses Sass and Bower but these are not required. I also sl
 - composer_modules
 - node_modules
 
-A Gruntfile has also been setup which made Assetic superfluous. Grunt will first copy assets in the web directory then watch for changes in twig, sass, jsx files, rebuild if necessary, and automatically reload the page which I find pretty awesome.
+A Gruntfile has also been setup which made Assetic superfluous. Grunt will first copy assets in the web directory then watch for changes in twig, sass, jsx files, rebuild if necessary, and automatically reload the page which I find pretty awesome. The Gruntfile would have to be customized to fit the specific needs of your application.
 
 ### Requirements
 
-[Set a virtual host](http://httpd.apache.org/docs/2.2/en/vhosts/examples.html) (for example: dev.symfony-react.com)
-[npm](https://nodejs.org/download/)
-[Ruby](http://rubyinstaller.org/)
+- [Set a virtual host](http://httpd.apache.org/docs/2.2/en/vhosts/examples.html) (for example: dev.symfony-react.com)
+- [npm](https://nodejs.org/download/)
+- [Ruby](http://rubyinstaller.org/)
 
-    curl -s http://getcomposer.org/installer | php
-    npm install browserify -g
-    npm install bower -g
-    gem install sass
+```
+curl -s http://getcomposer.org/installer | php
+npm install browserify -g
+npm install bower -g
+gem install sass
+```
 
 ### Installation
 
